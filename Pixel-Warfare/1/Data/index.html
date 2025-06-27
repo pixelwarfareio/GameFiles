@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <title>Unity WebGL Player | Pixel Warfare</title>
+  <link rel="shortcut icon" href="favicon.ico">
+  <script src="Build/UnityLoader.js"></script>
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      width: 100%;
+      overflow: hidden;
+      background: black;
+    }
+
+    .webgl-content {
+      position: fixed;
+      width: 100%;
+      height: 100%;
+    }
+
+    #gameContainer {
+      width: 100%;
+      height: 100%;
+      padding: 0;
+      margin: 0;
+      position: relative;
+    }
+
+    canvas {
+      width: 100% !important;
+      height: 100% !important;
+      display: block;
+    }
+
+    .fullscreen {
+      position: fixed;
+      width: 40px;
+      height: 40px;
+    }
+  </style>
+  <script>
+    var gameInstance = UnityLoader.instantiate("gameContainer", "Build/Game.json");
+  </script>
+</head>
+<body>
+  <div class="webgl-content">
+    <div class="fullscreen" onclick="gameInstance.SetFullscreen(1)"></div>
+    <div id="gameContainer"></div>
+  </div>
+</body>
+</html>
