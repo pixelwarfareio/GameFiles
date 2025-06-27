@@ -37,9 +37,10 @@
     }
 
     .fullscreen {
+      z-index: 1000;
       position: fixed;
-      width: 40px;
-      height: 40px;
+      width: 24px;
+      height: 24px;
     }
   </style>
   <script>
@@ -48,7 +49,11 @@
 </head>
 <body>
   <div class="webgl-content">
-    <div class="fullscreen" onclick="gameInstance.SetFullscreen(1)"></div>
+    <div class="fullscreen" onclick="if(gameInstance) gameInstance.SetFullscreen(1)" style="fill: white;">
+      <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+        <path d="M0 0v7h2V2h5V0H0zm25 0v2h5v5h2V0h-7zM0 25v7h7v-2H2v-5H0zm30 0v5h-5v2h7v-7h-2z"></path>
+      </svg>
+    </div>
     <div id="gameContainer"></div>
   </div>
 </body>
